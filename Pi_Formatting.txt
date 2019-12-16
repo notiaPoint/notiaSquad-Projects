@@ -1,0 +1,22 @@
+Formatting SD cards for Pi on Linux OS:
+
+sudo fdisk -l (find the location of device i will use /dev/sdc for my example)
+sudo fdisk /dev/sdc 
+once in the fdisk utility you will do n for new partition and then just hit enter through the steps. then before exiting make sure to hit w to write the changes.
+sudo mkfs.fat -F 32 /dev/sdc1 (as sdc1 is the new partition we just created)
+sudo fdisk -l to verify it shows up, the file system might show up as Linux, this is ok.
+sudo dd bs=4M if=kali-linux-2019.4-rpi3-nexmon-64.img of=/dev/sdb conv=fsync status=progress
+     (make sure you are in the directory the file is located in or give the absolute path)
+
+After this, eject the sd card, and reconnect and verify you have two volumes show up, one should be 128mb and another around 7gb. This will mean that you have completed the steps correctly.
+
+Now, plug the SD card into the Pi and it will boot up!!
+
+
+For cloning the SD card after the OS is installed, once again we will use the dd command. Follow all steps as above for formatting except for #6, in replacement use the command I post below.
+
+if = will be the current working SD card, and of = will be the newly formatted SD card.
+
+dd if=/dev/sdb(whatever your location of working SD is) of=/dev/mmcblk0(Location of blank newly formatted SD) bs=4096 conv=sync,noerror status=progress
+
+Once again verify the dd command worked by unplugging and plugging the SD card back in and verifying partitions. 
