@@ -1,0 +1,11 @@
+Here we will explain the steps for doing the nmap scan.
+
+1. Determine subnet that needs to be scanned, this will either be provided by instructors with a range of IP's or with our pre-configured network.
+
+2. run nmap command as follows and find open ports on IP's
+
+nmap -O -T4 10.0.3.0/24
+
+3. the -O flag will enable OS Detection using a TCP/IP stack fingerprint, and the -T4 flag will give a faster than default scan speed. 
+
+4. Once you run the scan you will come up with a list of IP's and what ports are open and what services are on those ports.
