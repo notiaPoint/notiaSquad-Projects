@@ -13,7 +13,6 @@ class portThread(threading.Thread):
         self.port = port
 
     def run(self):
-        print("Opening port {}".format(self.port))
         s=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.bind(('', self.port))
         s.listen(1)
