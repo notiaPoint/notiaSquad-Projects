@@ -1,6 +1,8 @@
+#!/usr/bin/python3
+
 import random
 import subprocess
-import sys
+import os
 
 def generate_port():
     return(random.randrange(10000, 20000))
@@ -11,8 +13,12 @@ def change_ssh_config(port):
     #subprocess.run(["systemctl", "restart", "sshd"])
 
 def main():
-    port = generate_port()
-    change_ssh_config(port)
+    if os.geteuid()==0:
+        port = generate_port()
+        change_ssh_config(port)
+        subprocess.run(["systemctl", "restart", "sshd"])
+    else:
+        print("Permission denied.")
 
 if __name__=="__main__":
     main()

@@ -1,20 +1,20 @@
 scripts :
-	set up a random opened port and have ssh through it
-	scrape all iptables config
+	set up a random opened port and have ssh through it 						ok
+	scrape all iptables config																			ok
 UI :
 	users :
 		set up an API to communicate with everything :
-			choosing the port
-			can they set up their own iptables rules ?
+			choosing the port																						no need
+			can they set up their own iptables rules ?									no need
 	admins :
-		see who is up
-		start / stop tournament		
+		see who is up																									put list of IPs and ping every minute
+		start / stop tournament																				put firewall rules on the local network
 idea :
 	find the ip address
 	find the port
-	find a port that responds the hash of credentials
-	crack the hash
+	find a port that responds the hash of credentials								no need, use hydra
+	crack the hash																									no need, use hydra
 	ssh into it and shutdown
 setup :
-	have everyone download VBox
-	have a .ova ready and updated / upgraded before hand
+	have everyone download VBox																			for learning
+	have a .ova ready and updated / upgraded before hand						see with Stephen
