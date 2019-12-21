@@ -4,7 +4,7 @@ Here we will explain the steps for doing the nmap scan.
 
 2. run nmap command as follows and find open ports on IP's
 
-nmap -O -T4 10.0.3.0/24 -T5 -p1024-2048
+nmap -O 10.0.3.0/24 -p1024-2048
 
 3. the -O flag will enable OS Detection using a TCP/IP stack fingerprint, and the -T4 flag will give a faster than default scan speed and the -p flag will specify to scan all the ports instead of the top 1000 well known ports.
 
