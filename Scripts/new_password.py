@@ -18,14 +18,14 @@ def select_password():
 
 def main():
     """
-    Check if user is root
+    Print the command to type to change password
     """
-    if os.geteuid()==0:
-        new_pass = select_password()
-        command = "echo \""+new_pass+"\n"+new_pass+"\""+" | passwd"
-        print(command)
-    else:
-        raise PermissionError("Permission denied for user with UID {}".format(os.geteuid()))
+    new_pass = select_password()
+    print("Your new password is", new_pass)
+    print("")
+    print("Execute the command bellow to update it")
+    command = "echo -e \""+new_pass+"\\n"+new_pass+"\""+" | passwd"
+    print(command)
 
 if __name__ == '__main__':
     main()
