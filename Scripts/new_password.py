@@ -9,6 +9,7 @@ import os
 def select_password():
     """
     Select a random password from the file top100.txt
+    These passwords are weak and can be broken by Hydra
     """
     top100 = open("../top100.txt", "r")
     lines = top100.readlines()
