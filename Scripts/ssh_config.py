@@ -26,7 +26,7 @@ def main():
     if os.geteuid()==0:
         port = generate_port()
         change_ssh_config(port)
-        subprocess.run(["systemctl", "restart", "sshd"])
+        subprocess.run(["systemctl", "restart", "ssh"])
     else:
         raise PermissionError("Permission denied for user with UID {}".format(os.geteuid()))
 

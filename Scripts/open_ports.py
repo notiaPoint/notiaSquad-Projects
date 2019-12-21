@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 # Guilhem Mizrahi 12/2019
-# this program opens 4 random ports in a specified range
+# this program opens 5 random ports in a specified range
 
 import socket           # to open the ports
 import random           # to choose random ports
