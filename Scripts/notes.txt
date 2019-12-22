@@ -18,3 +18,8 @@ idea :
 setup :
 	have everyone download VBox																			for learning
 	have a .ova ready and updated / upgraded before hand						see with Stephen
+
+add steps to not make it a speed contest
+	like hide the password list so that you need a flag or find it before hacking
+
+have the hardware setup before

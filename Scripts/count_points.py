@@ -19,12 +19,12 @@ def ping_list(ip_list, point_list):
             else:
                 print(ip_list[i], "is down")
         print([(ip_list[i], point_list[i]) for i in range(len(ip_list))])
-        time.sleep(5)
+        time.sleep(1)
 
 def main(ip_list):
     point_list = [0]*len(ip_list)
     ping_list(ip_list, point_list)
 
 if __name__ == '__main__':
-    ip_list = ["10.0.3.236", "10.0.3.212"]
+    ip_list = ["192.168.1."+str(i) for i in range(20)]
     main(ip_list)
